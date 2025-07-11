@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Edit Data Pengguna{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <div class="card border-0 shadow-sm rounded-3">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0"><i class="fas fa-user-edit me-2"></i>Edit Data Pengguna</h5>
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" name="username" class="form-control" value="{{ user.username }}" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Peran</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user-tag"></i></span>
+                <select name="role" class="form-select" required>
+                  <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>Admin</option>
+                  <option value="guru" {% if user.role == 'guru' %}selected{% endif %}>Guru</option>
+                  <option value="staf" {% if user.role == 'staf' %}selected{% endif %}>Staf</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Status</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-toggle-on"></i></span>
+                <select name="status" class="form-select">
+                  <option value="aktif" {% if user.status %}selected{% endif %}>Aktif</option>
+                  <option value="nonaktif" {% if not user.status %}selected{% endif %}>Nonaktif</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <button type="submit" class="btn btn-success">
+                <i class="fas fa-save me-1"></i> Simpan
+              </button>
+              <a href="{{ url_for('pengguna') }}" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-1"></i> Kembali
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

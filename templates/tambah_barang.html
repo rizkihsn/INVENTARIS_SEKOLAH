@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg rounded-4 border-0">
+        <div class="card-body p-5">
+          <h3 class="mb-4 text-center text-success fw-bold">Tambah Barang</h3>
+          <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="kode" class="form-label">Kode Barang:</label>
+              <input type="text" class="form-control" name="kode" id="kode" placeholder="Contoh: 01" required>
+            </div>
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama Barang:</label>
+              <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan nama barang" required>
+            </div>
+            <div class="mb-3">
+              <label for="jumlah" class="form-label">Jumlah:</label>
+              <input type="number" class="form-control" name="jumlah" id="jumlah" min="1" placeholder="Masukkan jumlah" required>
+            </div>
+            <div class="mb-3">
+              <label for="kondisi" class="form-label">Kondisi:</label>
+              <select class="form-select" name="kondisi" id="kondisi" required>
+                <option value="Baik">Baik</option>
+                <option value="Rusak">Rusak</option>
+                <option value="Perlu Perbaikan">Perlu Perbaikan</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="lokasi" class="form-label">Lokasi:</label>
+              <input type="text" class="form-control" name="lokasi" id="lokasi" placeholder="Masukkan lokasi penyimpanan" required>
+            </div>
+            <div class="mb-4">
+              <label for="gambar" class="form-label">Upload Gambar (Opsional):</label>
+              <input class="form-control" type="file" id="gambar" name="gambar" accept="image/*">
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success">Tambah</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

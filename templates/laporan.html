@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Laporan Bulanan{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="card-title mb-4 text-center">Laporan Bulanan</h4>
+        <form method="POST">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto">
+              <label for="bulan" class="col-form-label fw-bold">Pilih Bulan:</label>
+            </div>
+            <div class="col-md-4">
+              <input type="month" id="bulan" name="bulan" class="form-control" required>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-success">Tampilkan</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

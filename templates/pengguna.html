@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Data Pengguna{% endblock %}
+
+{% block content %}
+<h3 class="mb-4">Data Pengguna</h3>
+<div class="table-responsive shadow-sm rounded bg-white p-3">
+  <table class="table table-hover align-middle">
+    <thead class="table-success">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Peran</th>
+        <th>Status</th>
+        <th>Dibuat</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td><span class="badge bg-info text-dark">{{ user.role }}</span></td>
+        <td>
+          {% if user.status %}
+            <span class="badge bg-success">Aktif</span>
+          {% else %}
+            <span class="badge bg-secondary">Nonaktif</span>
+          {% endif %}
+        </td>
+        <td>{{ user.created_at.strftime('%Y-%m-%d') }}</td>
+        <td>
+          <a href="{{ url_for('pengguna_detail', user_id=user.id) }}" class="btn btn-sm btn-outline-primary">
+            <i class="fas fa-edit"></i> Edit
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

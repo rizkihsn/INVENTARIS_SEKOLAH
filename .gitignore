@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.db
+instance/
+.env
+venv/
+.venv/
+.vscode/
+static/uploads/
