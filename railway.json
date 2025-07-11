@@ -5,6 +5,6 @@
     }
   },
   "deploy": {
-    "startCommand": "gunicorn app:app"
+    "startCommand": "./start.sh"
   }
 }
