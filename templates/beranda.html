@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Inventaris Sekolah</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #00b4db, #0083b0);
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        a.button {
+            text-decoration: none;
+            padding: 12px 25px;
+            background-color: white;
+            color: #0083b0;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #f1f1f1;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 0.9em;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Datang 👋</h1>
+    <p>Aplikasi <strong>Inventaris Sekolah</strong><br>
+    Kelola data barang dengan mudah dan efisien</p>
+
+    <div class="btn-container">
+        <a href="{{ url_for('login') }}" class="button">Login</a>
+        <a href="{{ url_for('register') }}" class="button">Daftar</a>
+    </div>
+
+    <footer>
+        &copy; {{ 2025 }} Inventaris Sekolah. Dibuat dengan ❤️ oleh Rizki.
+    </footer>
+</body>
+</html>
