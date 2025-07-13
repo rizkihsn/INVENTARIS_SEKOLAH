@@ -161,11 +161,20 @@ def edit(id):
         return redirect(url_for('dashboard'))
     return render_template('edit_barang.html', barang=barang)
 
-@app.route('/laporan')
+@app.route('/laporan', methods=['GET', 'POST'])
 @login_required
 def laporan():
-    barang = Barang.query.filter_by(user_id=current_user.id).all()
+    barang = []
+
+    if request.method == 'POST':
+        bulan = request.form.get('bulan')  # contoh: '2025-07'
+        if bulan:
+            barang = Barang.query.filter(
+                Barang.user_id == current_user.id,
+                Barang.tanggal.like(f"{bulan}%")
+            ).all()
     return render_template('laporan.html', barang=barang)
+
 
 @app.route('/download_pdf')
 @login_required
