@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda - Inventaris Sekolah</title>
+{% extends "base.html" %}
+
+{% block content %}
     <style>
         body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #00b4db, #0083b0);
+            background: linear-gradient(to right, hsl(152, 98%, 35%), #048f39);
             color: white;
             text-align: center;
             padding: 40px;
@@ -50,11 +45,10 @@
             color: #ddd;
         }
     </style>
-</head>
-<body>
-    <h1>Selamat Datang 👋</h1>
-    <p>Aplikasi <strong>Inventaris Sekolah</strong><br>
-    Kelola data barang dengan mudah dan efisien</p>
+
+    <h1>Selamat Datang di Sistem Inventaris Sekolah 👋</h1>
+    <p>Kelola barang inventaris dengan mudah dan cepat.</p>
+    <p>Silakan login untuk mengelola data inventaris, jika belum punya akun silakan daftar terlebih dahulu.</p>
 
     <div class="btn-container">
         <a href="{{ url_for('login') }}" class="button">Login</a>
@@ -64,5 +58,4 @@
     <footer>
         &copy; {{ 2025 }} Inventaris Sekolah. Dibuat dengan ❤️ oleh Rizki.
     </footer>
-</body>
-</html>
+{% endblock %}
