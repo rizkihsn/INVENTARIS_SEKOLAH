@@ -1,51 +1,58 @@
 {% extends "base.html" %}
 
+{% block title %}Beranda - Inventaris Sekolah{% endblock %}
+
+{% block head %}
+<style>
+    .beranda-container {
+        background: linear-gradient(to right, hsl(152, 98%, 35%), #048f39);
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        border-radius: 10px;
+    }
+
+    .beranda-container h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    .beranda-container p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .button {
+        text-decoration: none;
+        padding: 12px 25px;
+        background-color: white;
+        color: #0083b0;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .button:hover {
+        background-color: #f1f1f1;
+    }
+
+    footer {
+        margin-top: 60px;
+        font-size: 0.9em;
+        color: #ddd;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-    <style>
-        body {
-            background: linear-gradient(to right, hsl(152, 98%, 35%), #048f39);
-            color: white;
-            text-align: center;
-            padding: 40px;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        a.button {
-            text-decoration: none;
-            padding: 12px 25px;
-            background-color: white;
-            color: #0083b0;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        a.button:hover {
-            background-color: #f1f1f1;
-        }
-
-        footer {
-            margin-top: 60px;
-            font-size: 0.9em;
-            color: #ddd;
-        }
-    </style>
-
+<div class="beranda-container">
     <h1>Selamat Datang di Sistem Inventaris Sekolah 👋</h1>
     <p>Kelola barang inventaris dengan mudah dan cepat.</p>
     <p>Silakan login untuk mengelola data inventaris, jika belum punya akun silakan daftar terlebih dahulu.</p>
@@ -58,4 +65,5 @@
     <footer>
         &copy; {{ 2025 }} Inventaris Sekolah. Dibuat dengan ❤️ oleh Rizki.
     </footer>
+</div>
 {% endblock %}
