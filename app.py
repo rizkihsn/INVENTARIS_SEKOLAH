@@ -23,13 +23,6 @@ db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-with app.app_context():
-    db.create_all()
-    if not User.query.filter_by(username='admin').first():
-        admin = User(username='admin', password=generate_password_hash('admin123'), role='admin')
-        db.session.add(admin)
-        db.session.commit()
-
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(150), unique=True, nullable=False)
@@ -109,7 +102,7 @@ def dashboard():
         barang = Barang.query.filter_by(user_id=current_user.id).all()
     total = sum([b.jumlah for b in barang])
     return render_template('dashboard.html', barang=barang, total=total)
-    
+
 @app.route('/hapus_semua', methods=['POST'])
 @login_required
 def hapus_semua():
@@ -117,7 +110,6 @@ def hapus_semua():
     db.session.commit()
     flash("Semua barang berhasil dihapus.")
     return redirect(url_for('dashboard'))
-
 
 @app.route('/tambah', methods=['GET', 'POST'])
 @login_required
