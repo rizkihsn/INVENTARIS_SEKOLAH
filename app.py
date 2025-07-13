@@ -57,7 +57,7 @@ def admin_required(f):
 
 @app.route('/')
 def index():
-    return redirect(url_for('login'))
+    return render_template('beranda.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

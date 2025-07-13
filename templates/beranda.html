@@ -1,61 +1,60 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Inventaris Sekolah</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, hsl(152, 98%, 35%), #048f39);
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
 
-{% block title %}Beranda - Inventaris Sekolah{% endblock %}
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
 
-{% block head %}
-<style>
-    .beranda-container {
-        background: linear-gradient(to right, hsl(152, 98%, 35%), #048f39);
-        color: white;
-        text-align: center;
-        padding: 60px 20px;
-        border-radius: 10px;
-    }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
 
-    .beranda-container h1 {
-        font-size: 3em;
-        margin-bottom: 10px;
-    }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
 
-    .beranda-container p {
-        font-size: 1.2em;
-        margin-bottom: 30px;
-    }
+        a.button {
+            text-decoration: none;
+            padding: 12px 25px;
+            background-color: white;
+            color: #0083b0;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-    .btn-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
+        a.button:hover {
+            background-color: #f1f1f1;
+        }
 
-    .button {
-        text-decoration: none;
-        padding: 12px 25px;
-        background-color: white;
-        color: #0083b0;
-        border-radius: 30px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    .button:hover {
-        background-color: #f1f1f1;
-    }
-
-    footer {
-        margin-top: 60px;
-        font-size: 0.9em;
-        color: #ddd;
-    }
-</style>
-{% endblock %}
-
-{% block content %}
-<div class="beranda-container">
+        footer {
+            margin-top: 60px;
+            font-size: 0.9em;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
     <h1>Selamat Datang di Sistem Inventaris Sekolah 👋</h1>
     <p>Kelola barang inventaris dengan mudah dan cepat.</p>
-    <p>Silakan login untuk mengelola data inventaris, jika belum punya akun silakan daftar terlebih dahulu.</p>
+        <p>Silakan login untuk mengelola data inventaris, jika belum punya akun silakan daftar terlebih dahulu.</p>
 
     <div class="btn-container">
         <a href="{{ url_for('login') }}" class="button">Login</a>
@@ -65,5 +64,5 @@
     <footer>
         &copy; {{ 2025 }} Inventaris Sekolah. Dibuat dengan ❤️ oleh Rizki.
     </footer>
-</div>
-{% endblock %}
+</body>
+</html>
